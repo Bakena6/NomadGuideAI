@@ -1,4 +1,4 @@
-# NomadLens 🏔️📱
+# NomadGuide AI 🏔️📱
 
 **Offline AI audio guide for Kazakhstan.** Point your camera at a landmark — mountain, monument, yurt, or a plate of beshbarmak — and hear stories in your language. Fully offline, no internet or SIM needed.
 
