@@ -4,7 +4,7 @@ This file tells Claude Code everything it needs to know about this project.
 
 ## Project Overview
 
-NomadGuide AI is an offline iOS AI audio guide for Kazakhstan. Tourists point their camera at landmarks, Gemma 4 E4B (on-device vision LLM) recognises them, retrieves facts from a local FAISS knowledge base, and speaks via AVSpeechSynthesizer in 30+ languages.
+NomadGuide AI is an offline iOS AI audio guide for Kazakhstan. Tourists point their camera at landmarks, Qwen3-VL-4B-Instruct (on-device vision LLM, Apache 2.0) recognises them, retrieves facts from a local FAISS knowledge base, and speaks via AVSpeechSynthesizer in 30+ languages.
 
 ## Build & Run
 
@@ -48,7 +48,7 @@ NomadGuideAI/
 │   │   ├── CameraManager.swift                # AVFoundation camera pipeline
 │   │   └── CameraView.swift                   # UIKit camera preview (UIViewControllerRepresentable)
 │   ├── LLM/
-│   │   └── LLMService.swift                   # Gemma 4 E4B inference (actor, placeholder)
+│   │   └── LLMService.swift                   # Qwen3-VL-4B-Instruct inference (actor, placeholder)
 │   ├── RAG/
 │   │   └── RAGService.swift                   # FAISS index search + knowledge base (actor, placeholder)
 │   ├── TTS/
@@ -78,20 +78,20 @@ NomadGuideAI/
 ## Architecture
 
 ```
-Camera → Gemma 4 E4B (vision) → identifies object
+Camera → Qwen3-VL-4B-Instruct (vision) → identifies object
          → FAISS RAG → retrieves facts, legends, history
-         → Gemma summarises in tourist's language
+         → Qwen3-VL summarises in tourist's language
          → AVSpeechSynthesizer reads aloud
          → All offline, all on-device
 ```
 
 **Key design decisions:**
 1. **SwiftUI + AVFoundation** — native iOS stack
-2. **MLX** — runs Gemma 4 E4B 4-bit GGUF on GPU/ANE
+2. **MLX + MLXVLM** — runs Qwen3-VL-4B-Instruct 4-bit on GPU/ANE
 3. **FAISS** — local vector search for 2,000+ articles
 4. **AVSpeechSynthesizer** — 30+ languages, 50-100ms TTFA, free
 5. **All-MiniLM-L6-v2** — 80MB ONNX embedding model for RAG
-6. **Knowledge base in Russian** — Gemma 4 translates on the fly to 140+ languages
+6. **Knowledge base in Russian** — Qwen3-VL natively supports 119+ languages (incl. Chinese/Russian/English/Kazakh), translates on the fly
 7. **Temperature 0.1-0.3** — minimise hallucinations in factual responses
 
 ## Git Workflow
@@ -115,7 +115,7 @@ bash run_pipeline.sh
 
 ## Next Steps (Priority)
 
-1. **Download Gemma 4 E4B GGUF** (~2.5 GB, 4-bit) from HuggingFace and add to Resources/
+1. **Download Qwen3-VL-4B-Instruct 4-bit MLX** (~2 GB) from `mlx-community/Qwen3-VL-4B-Instruct-4bit` on HuggingFace and add to Resources/
 2. **Download all-MiniLM-L6-v2 ONNX/CoreML** (~80 MB) and add to Resources/
 3. **Run knowledge base pipeline** to generate FAISS index
 4. **Implement actual MLX inference** in LLMService.swift (currently placeholder)

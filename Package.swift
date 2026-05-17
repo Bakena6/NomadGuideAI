@@ -18,6 +18,10 @@ let package = Package(
         // MLX Swift — Apple Silicon machine learning framework
         .package(url: "https://github.com/ml-explore/mlx-swift.git",
                  .upToNextMinor(from: "0.31.3")),
+        // mlx-swift-examples — provides MLXVLM (vision-language) and MLXLLM wrappers,
+        // tokenizer loading, prompt formatting for Qwen3-VL and other VLMs.
+        .package(url: "https://github.com/ml-explore/mlx-swift-examples.git",
+                 branch: "main"),
         // swift-transformers — HuggingFace tokenizer & model loading
         .package(url: "https://github.com/huggingface/swift-transformers.git",
                  .upToNextMajor(from: "1.3.0")),
@@ -31,6 +35,8 @@ let package = Package(
                 .product(name: "MLXNN", package: "mlx-swift"),
                 .product(name: "MLXFast", package: "mlx-swift"),
                 .product(name: "MLXRandom", package: "mlx-swift"),
+                .product(name: "MLXVLM", package: "mlx-swift-examples"),
+                .product(name: "MLXLLM", package: "mlx-swift-examples"),
                 .product(name: "Transformers", package: "swift-transformers"),
             ],
             path: "Sources",

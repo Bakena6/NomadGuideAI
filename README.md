@@ -2,16 +2,16 @@
 
 **Offline AI audio guide for Kazakhstan.** Point your camera at a landmark — mountain, monument, yurt, or a plate of beshbarmak — and hear stories in your language. Fully offline, no internet or SIM needed.
 
-Built with **Gemma 4 E4B** (on-device vision LLM), **FAISS RAG**, and **AVSpeechSynthesizer** (30+ native iOS voices).
+Built with **Qwen3-VL-4B-Instruct** (on-device vision LLM, Apache 2.0), **FAISS RAG**, and **AVSpeechSynthesizer** (30+ native iOS voices).
 
 ---
 
 ## How it works
 
 ```
-Camera → Gemma 4 E4B (vision) → identifies object
+Camera → Qwen3-VL-4B-Instruct (vision) → identifies object
          → FAISS RAG → retrieves facts, legends, history
-         → Gemma summarises in tourist's language
+         → Qwen3-VL summarises in tourist's language
          → AVSpeechSynthesizer reads aloud
          → All offline, all on-device
 ```
@@ -41,7 +41,7 @@ They land at the airport, scan a QR code, download the app — and explore Kazak
 │                                            │
 │  Camera Live Preview                       │
 │       ↓                                    │
-│  Gemma 4 E4B 4-bit (~2.5 GB)              │
+│  Qwen3-VL-4B-Instruct 4-bit (~2 GB)         │
 │  • Vision recognition                      │
 │  • Object classification                   │
 │  • Scene understanding                     │
@@ -99,7 +99,7 @@ NomadGuideAI/
 │   ├── main.swift              # App entry point
 │   ├── App/                    # SwiftUI views, language picker
 │   ├── Camera/                 # Camera pipeline, AVFoundation
-│   ├── LLM/                    # Gemma 4 E4B inference (MLX)
+│   ├── LLM/                    # Qwen3-VL-4B-Instruct inference (MLXVLM)
 │   ├── RAG/                    # FAISS index, knowledge base loader
 │   ├── TTS/                    # AVSpeechSynthesizer wrapper
 │   └── Resources/              # Bundled model files, FAISS index
@@ -112,7 +112,7 @@ NomadGuideAI/
 
 ## Roadmap
 
-- **Phase 0 (MVP — 2 weeks)** — Gemma 4 E4B on iOS, camera → vision → answer, English only, 50 landmarks (Mangystau)
+- **Phase 0 (MVP — 2 weeks)** — Qwen3-VL-4B-Instruct on iOS, camera → vision → answer, English only, 50 landmarks (Mangystau)
 - **Phase 1 (+1 week)** — 5 languages (EN, ZH, DE, KO, TR), 500+ articles, GPS-free tap-to-identify
 - **Phase 2 (+2 weeks)** — Full knowledge base (2,000+), audio-optimised responses, performance tuning
 - **Phase 3** — B2G sponsorship packages, QR codes at airports/hotels, App Store release

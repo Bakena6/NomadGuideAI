@@ -12,8 +12,8 @@ NomadGuide AI is an **offline-first AI audio guide** for iOS. Tourists point the
 
 | Component | Technology | Why |
 |-----------|-----------|-----|
-| Vision | **Gemma 4 E4B** (multimodal 4B, 4-bit) | 4B params with vision+language, runs on ANE, 15-20 tok/s |
-| LLM Inference | **MLX** (Apple) or **llama.cpp** GGUF | Native Apple Silicon; MLX preferred for Swift integration |
+| Vision | **Qwen3-VL-4B-Instruct** (multimodal 4B, 4-bit, Apache 2.0) | 4B params with vision+language, 119 languages, runs on ANE, ~12-15 tok/s on A17 Pro |
+| LLM Inference | **MLX + MLXVLM** (Apple) | Native Apple Silicon, vision-language pipeline; available in `mlx-swift-examples` |
 | RAG (vector search) | **FAISS** (C++ via Swift bindings) | Industry standard, lightweight, fast |
 | Text-to-Speech | **AVSpeechSynthesizer** (iOS native) | 30+ languages, 50-100ms TTFA, free, offline |
 | Embeddings | **all-MiniLM-L6-v2** (ONNX) | 80MB, offline, Apache 2.0 |
@@ -29,7 +29,7 @@ NomadGuide AI is an **offline-first AI audio guide** for iOS. Tourists point the
 │                   NomadGuide AI (iOS)                     │
 │                                                          │
 │  ┌──────────┐    ┌──────────────┐    ┌─────────────────┐ │
-│  │ Camera   │───▶│ Gemma 4 E4B  │───▶│   FAISS RAG     │ │
+│  │ Camera   │───▶│ Qwen3-VL-4B  │───▶│   FAISS RAG     │ │
 │  │ Preview  │    │ (vision)     │    │   KnowledgeBase │ │
 │  └──────────┘    │              │    │                 │ │
 │                  │  detects     │    │  retrieves      │ │
@@ -38,9 +38,9 @@ NomadGuide AI is an **offline-first AI audio guide** for iOS. Tourists point the
 │                         │                     │          │
 │                         ▼                     │          │
 │                  ┌──────────────┐            │          │
-│                  │   Gemma 4    │◀────────────┘          │
-│                  │   generates  │                        │
-│                  │   narration  │                        │
+│                  │  Qwen3-VL    │◀────────────┘          │
+│                  │  generates   │                        │
+│                  │  narration   │                        │
 │                  └──────┬───────┘                        │
 │                         │                                │
 │                         ▼                                │
@@ -57,9 +57,9 @@ NomadGuide AI is an **offline-first AI audio guide** for iOS. Tourists point the
 ### Step by Step
 
 1. **Camera** → captures frame when user taps or auto-detects scene change
-2. **Gemma 4 E4B** (vision) → analyses image, identifies landmarks/objects/ scenes, outputs keywords and confidence
+2. **Qwen3-VL-4B-Instruct** (vision) → analyses image, identifies landmarks/objects/scenes, outputs keywords and confidence
 3. **FAISS RAG** → searches knowledge base using keywords + embedding, returns top 3-5 relevant articles
-4. **Gemma 4 E4B** (language) → reads retrieved context, generates a 20-60 second narration in the tourist's language
+4. **Qwen3-VL-4B-Instruct** (language) → reads retrieved context, generates a 20-60 second narration in the tourist's language
 5. **AVSpeechSynthesizer** → speaks the narration using the device's native voice in that language
 
 ---
@@ -97,7 +97,7 @@ Articles are stored as structured chunks (500-1000 tokens each):
 }
 ```
 
-The knowledge base is **stored in Russian** (highest content availability for Kazakhstan). Gemma 4 translates on-the-fly to the tourist's language.
+The knowledge base is **stored in Russian** (highest content availability for Kazakhstan). Qwen3-VL natively supports 119+ languages (Chinese, Russian, English, Kazakh, Arabic, Hindi, Korean, German, Turkish, French, etc.) and translates on-the-fly.
 
 ### Building the Index
 
@@ -116,7 +116,7 @@ The knowledge base is **stored in Russian** (highest content availability for Ka
 
 | Component | Size | Startup Time |
 |-----------|:----:|:------------:|
-| Gemma 4 E4B (4-bit GGUF) | ~2.5 GB | 3-5 sec load |
+| Qwen3-VL-4B-Instruct (4-bit MLX) | ~2 GB | 3-5 sec load |
 | FAISS index | ~100 MB | <1 sec load |
 | Knowledge base text | ~50-80 MB | SQLite on-demand |
 | Embedding model | ~80 MB | <1 sec load |
@@ -131,9 +131,9 @@ User downloads the app once at hotel WiFi (or pre-installed). Then it works enti
 
 | Metric | Target | Method |
 |--------|:------:|--------|
-| Camera → Recognition | 3-5 sec | Gemma 4 E4B @15-20 tok/s |
+| Camera → Recognition | 3-5 sec | Qwen3-VL-4B vision encoder + first-token latency |
 | RAG retrieval | <200 ms | FAISS IVF, 2K docs |
-| Narration generation | 1-3 sec | Gemma streaming |
+| Narration generation | 1-3 sec | Qwen3-VL streaming @12-15 tok/s |
 | Audio playback start | 50-100 ms | AVSpeech TTFA |
 | **Total time-to-speech** | **5-8 sec** | from camera tap |
 
@@ -169,7 +169,7 @@ NomadGuideAI/
 │   │   ├── CameraManager.swift
 │   │   ├── CameraView.swift
 │   │   └── ImageProcessor.swift
-│   ├── LLM/                   # Gemma 4 E4B inference
+│   ├── LLM/                   # Qwen3-VL-4B-Instruct inference (MLXVLM)
 │   │   ├── LLMService.swift
 │   │   ├── MLXEngine.swift
 │   │   └── Models/
@@ -218,7 +218,7 @@ Summary:
 
 ## Roadmap
 
-- **Week 1-2 (MVP):** Gemma 4 E4B on iOS, camera → vision → answer, English only, 50 landmarks (Mangystau)
+- **Week 1-2 (MVP):** Qwen3-VL-4B-Instruct on iOS, camera → vision → answer, English only, 50 landmarks (Mangystau)
 - **Week 3:** 5 languages (EN, ZH, DE, KO, TR), 500+ articles, tap-to-identify
 - **Week 4-5:** Full knowledge base (2,000+), audio-optimised responses, performance tuning
 - **Week 6:** App Store submission, pilot with Mangystau akimat
