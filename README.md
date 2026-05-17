@@ -59,23 +59,55 @@ They land at the airport, scan a QR code, download the app — and explore Kazak
 └────────────────────────────────────────────┘
 ```
 
+## Building from source
+
+Requires **macOS 14+** and **Xcode 16+**.
+
+```bash
+# 1. Clone
+git clone https://github.com/Bakena6/NomadGuideAI.git
+cd NomadGuideAI
+
+# 2. Open in Xcode
+open Package.swift
+
+# 3. Build knowledge base index (optional — pre-built index included)
+cd KnowledgeBase/scripts
+python3 -m venv .venv && source .venv/bin/activate
+pip install -r requirements.txt
+bash run_pipeline.sh
+```
+
+Xcode will automatically resolve SPM dependencies (MLX, Transformers). Select an iOS 18+ simulator or a physical device and run.
+
+### System requirements
+
+| Requirement | Minimum |
+|-------------|:-------:|
+| iOS | 17+ |
+| Device | iPhone 15 Pro / 16 (A17 Pro or later for ANE) |
+| Storage | 4 GB free for app + models |
+| macOS (build) | 14+ |
+| Xcode | 16+ |
+
 ## Repository structure
 
 ```
-NomadLens/
-├── NomadLens.xcodeproj/       # Xcode project
+NomadGuideAI/
+├── Package.swift               # SwiftPM dependencies (MLX, Transformers)
 ├── Sources/
-│   ├── App/                   # App entry, SwiftUI views
-│   ├── Camera/                # Camera pipeline, Vision framework
-│   ├── LLM/                   # Gemma 4 E4B inference (MLX/llama.cpp)
-│   ├── RAG/                   # FAISS index, knowledge base loader
-│   ├── TTS/                   # AVSpeechSynthesizer wrapper
-│   └── Data/                  # Models, CoreData schema
-├── KnowledgeBase/             # Scripts to build the RAG index
-│   ├── scripts/               # Python parsers
-│   └── data/                  # Raw articles, generated index
-├── Tests/                     # Unit + integration tests
-└── docs/                      # Architecture docs, grant proposals
+│   ├── main.swift              # App entry point
+│   ├── App/                    # SwiftUI views, language picker
+│   ├── Camera/                 # Camera pipeline, AVFoundation
+│   ├── LLM/                    # Gemma 4 E4B inference (MLX)
+│   ├── RAG/                    # FAISS index, knowledge base loader
+│   ├── TTS/                    # AVSpeechSynthesizer wrapper
+│   └── Resources/              # Bundled model files, FAISS index
+├── KnowledgeBase/              # Scripts to build the RAG index
+│   ├── scripts/                # Python parsers (Wikipedia, travel sites)
+│   └── data/                   # Raw articles, generated index
+├── Tests/
+└── docs/                       # Architecture, monetization, proposals
 ```
 
 ## Roadmap
