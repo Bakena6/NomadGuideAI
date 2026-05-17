@@ -1,0 +1,10 @@
+/.venv/
+__pycache__/
+*.pyc
+KnowledgeBase/data/index/
+KnowledgeBase/data/raw/*.jsonl
+.DS_Store
+*.xcodeproj/xcuserdata/
+*.xcworkspace/xcuserdata/
+DerivedData/
+.build/
