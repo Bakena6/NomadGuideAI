@@ -9,6 +9,12 @@ struct SettingsView: View {
     @AppStorage("app_language") private var language: AppLanguage = .en
     @StateObject private var store = POIStore.shared
 
+    private var appVersion: String {
+        let v = Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String ?? "1.0"
+        let b = Bundle.main.object(forInfoDictionaryKey: "CFBundleVersion") as? String ?? "1"
+        return "\(v) (\(b))"
+    }
+
     var body: some View {
         NavigationStack {
             Form {
@@ -24,20 +30,10 @@ struct SettingsView: View {
                 Section("Content") {
                     LabeledContent("Region", value: store.region?.region_name.value(for: language) ?? "—")
                     LabeledContent("Landmarks", value: "\(store.landmarks.count)")
-                    LabeledContent("With GPS", value: "\(store.landmarksWithCoords.count)")
                 }
 
-                Section("Backend") {
-                    LabeledContent("Vision", value: "Qwen3-VL-4B (server) → on-device (v2)")
-                    LabeledContent("TTS", value: "AVSpeech (offline)")
-                }
-
-                Section("About") {
-                    if let note = store.region?.license_note {
-                        Text(note)
-                            .font(.footnote)
-                            .foregroundStyle(.secondary)
-                    }
+                Section {
+                    LabeledContent("Version", value: appVersion)
                 }
             }
             .navigationTitle("Settings")
