@@ -1,0 +1,108 @@
+{
+  "schema_version": "1",
+  "region": "mangystau",
+  "region_name": {"ru": "Мангистауская область", "en": "Mangystau Region", "kz": "Маңғыстау облысы"},
+  "license_note": "Content compiled from public sources (Wikipedia CC-BY-SA, Kazakhstan.travel, Caravanistan). Attribution required in app's About screen.",
+  "landmarks": [
+    {
+      "id": "sherkala",
+      "name": {"ru": "Шеркала", "en": "Sherkala", "kz": "Шерқала"},
+      "coords": {"lat": 44.0667, "lon": 51.7167},
+      "category": "natural",
+      "keywords": ["sherkala", "lion mountain", "yurt rock", "gora-lev", "шеркала"],
+      "content_ru": "Шеркала — одинокая гора в форме юрты или лежащего льва, поднимается на 332 метра над долиной. Её склоны изборождены ветром и временем, образуя на стенах фантастические узоры. По легендам казахов, в пещерах Шеркалы скрывались воины Огуз-хана. С вершины открывается вид на плато Устюрт и долину каменных шаров Торыш.",
+      "content_en": "Sherkala is a lone 332-metre mountain shaped like a yurt or a sleeping lion, rising from the Mangystau steppe. Wind and time have carved its walls into intricate patterns. Kazakh legend says the warriors of Oghuz Khan once hid in its caves. From the summit you see the Ustyurt plateau and the Valley of Stone Balls — Torysh.",
+      "source": "wikipedia+kazakhstan.travel"
+    },
+    {
+      "id": "bozzhyra",
+      "name": {"ru": "Босжыра", "en": "Boszhira", "kz": "Бозжыра"},
+      "coords": {"lat": 43.1667, "lon": 54.1000},
+      "category": "natural",
+      "keywords": ["bozzhyra", "boszhira", "fangs", "tropical-looking cliffs", "босжира"],
+      "content_ru": "Босжыра — белоснежные меловые скалы, поднимающиеся из дна высохшего древнего океана Тетис. 50 миллионов лет назад здесь плескалось море, оставив после себя слои известняка с окаменелостями морских ежей и аммонитов. Два пика, прозванные «клыки», стали визитной карточкой Мангистау.",
+      "content_en": "Boszhira is a landscape of chalk-white cliffs rising from the floor of the ancient Tethys Ocean. Fifty million years ago this was seabed, leaving limestone layers full of fossilised sea urchins and ammonites. Two peaks known as 'The Fangs' have become the visual signature of Mangystau.",
+      "source": "wikipedia+caravanistan"
+    },
+    {
+      "id": "torysh",
+      "name": {"ru": "Торыш", "en": "Torysh — Valley of Balls", "kz": "Торыш"},
+      "coords": {"lat": 44.1500, "lon": 52.5000},
+      "category": "natural",
+      "keywords": ["torysh", "valley of balls", "stone spheres", "konkretsii", "торыш"],
+      "content_ru": "Долина Торыш усеяна сотнями каменных шаров диаметром от метра до шести. Геологи называют их конкрециями — они образовались на дне моря миллионы лет назад, когда минеральные растворы кристаллизовались вокруг ядра. Местные считают их окаменевшими яйцами древних драконов.",
+      "content_en": "The Torysh valley is dotted with hundreds of stone spheres, from one to six metres across. Geologists call them concretions — they formed on the seabed millions of years ago when mineral solutions crystallised around a core. Locals call them the petrified eggs of ancient dragons.",
+      "source": "wikipedia"
+    },
+    {
+      "id": "beket_ata",
+      "name": {"ru": "Бекет-Ата", "en": "Beket-Ata", "kz": "Бекет-Ата"},
+      "coords": {"lat": 43.6000, "lon": 54.5833},
+      "category": "spiritual",
+      "keywords": ["beket-ata", "beket ata", "underground mosque", "sufi", "бекет ата"],
+      "content_ru": "Подземная мечеть Бекет-Ата высечена в меловой скале в XVIII веке святым суфием и учёным Бекет-ата Мырзагулом. Это одно из самых почитаемых мест паломничества в Казахстане. Паломники проходят пешком последние 3 километра в знак уважения. Внутри прохладно даже летом, и стены хранят отпечатки рук поколений верующих.",
+      "content_en": "The Beket-Ata underground mosque was carved into chalk rock in the 18th century by Sufi saint and scholar Beket-ata Myrzagul. It is one of the most revered pilgrimage sites in Kazakhstan. Pilgrims walk the last 3 kilometres on foot as a sign of respect. Inside it stays cool even in summer, and the walls bear handprints of generations of believers.",
+      "source": "kazakhstan.travel+local"
+    },
+    {
+      "id": "tuzbair",
+      "name": {"ru": "Тузбаир", "en": "Tuzbair", "kz": "Тұзбайыр"},
+      "coords": {"lat": 44.2500, "lon": 54.4167},
+      "category": "natural",
+      "keywords": ["tuzbair", "salt flat", "white cliffs", "тузбайыр"],
+      "content_ru": "Тузбаир — солончак на границе плато Устюрт, окружённый белыми меловыми обрывами высотой до 100 метров. После дождей соляная корка превращается в зеркало, отражающее небо. Это место часто называют «казахстанским Уюни» в честь боливийского солончака.",
+      "content_en": "Tuzbair is a salt flat at the edge of the Ustyurt plateau, surrounded by white chalk cliffs up to 100 metres tall. After rain, the salt crust turns into a mirror reflecting the sky. It is often called the 'Kazakh Uyuni' after the famous Bolivian salt flat.",
+      "source": "kazakhstan.travel"
+    },
+    {
+      "id": "zhygylgan",
+      "name": {"ru": "Жыгылған", "en": "Zhygylgan — Fallen Earth", "kz": "Жығылған"},
+      "coords": {"lat": 43.7833, "lon": 50.7500},
+      "category": "natural",
+      "keywords": ["zhygylgan", "fallen earth", "amphitheatre", "dinosaur tracks", "жыгылган"],
+      "content_ru": "Жыгылған в переводе с казахского означает «упавшая земля». Гигантский амфитеатр диаметром более 10 километров образовался, когда край плато Тюб-Караган обрушился в Каспий. На дне найдены окаменевшие следы динозавров возрастом 65 миллионов лет.",
+      "content_en": "Zhygylgan means 'fallen earth' in Kazakh. The giant amphitheatre over 10 kilometres across formed when the edge of the Tyub-Karagan plateau collapsed into the Caspian. On the floor, fossilised dinosaur footprints 65 million years old have been found.",
+      "source": "wikipedia+kazakhstan.travel"
+    },
+    {
+      "id": "airakty",
+      "name": {"ru": "Айракты-Шоманай", "en": "Airakty-Shomanai", "kz": "Айрақты-Шоманай"},
+      "coords": {"lat": 44.1167, "lon": 52.3833},
+      "category": "natural",
+      "keywords": ["airakty", "shomanai", "valley of castles", "stone castles", "айракты"],
+      "content_ru": "Айракты-Шоманай — «долина замков», где ветер и вода вылепили из меловых скал силуэты, напоминающие средневековые крепости с башнями и зубцами. Тарас Шевченко, проходивший здесь в ссылке, написал серию рисунков, посвящённых этим скалам.",
+      "content_en": "Airakty-Shomanai is the 'valley of castles', where wind and water have sculpted chalk rocks into shapes resembling medieval fortresses with towers and battlements. The Ukrainian poet Taras Shevchenko, who passed through here in exile, made a series of drawings of these rocks.",
+      "source": "wikipedia+local"
+    },
+    {
+      "id": "shakpak_ata",
+      "name": {"ru": "Шакпак-Ата", "en": "Shakpak-Ata", "kz": "Шақпақ-Ата"},
+      "coords": {"lat": 44.4167, "lon": 51.1833},
+      "category": "spiritual",
+      "keywords": ["shakpak-ata", "underground mosque", "ancient mosque", "шакпак ата"],
+      "content_ru": "Шакпак-Ата — одна из старейших подземных мечетей Мангистау, высеченная в меловой скале в IX-X веках. Внутри сохранились арабские надписи и петроглифы — изображения коней и оружия. Это говорит о том, что место было святилищем ещё до прихода ислама.",
+      "content_en": "Shakpak-Ata is one of the oldest underground mosques in Mangystau, carved into chalk rock in the 9th-10th centuries. Arabic inscriptions and petroglyphs — images of horses and weapons — survive inside. This suggests the site was a sanctuary even before the arrival of Islam.",
+      "source": "wikipedia"
+    },
+    {
+      "id": "kapamsay",
+      "name": {"ru": "Капамсай", "en": "Kapamsay Canyon", "kz": "Қапамсай"},
+      "coords": {"lat": 43.4500, "lon": 54.2333},
+      "category": "natural",
+      "keywords": ["kapamsay", "canyon", "капамсай"],
+      "content_ru": "Каньон Капамсай — узкая трещина в плато Устюрт глубиной до 80 метров. Дно покрыто слоистыми отложениями, на стенах видны окаменелости древнего моря. В каньоне даже в самую жару прохладно — естественная защита от ветра и солнца.",
+      "content_en": "Kapamsay Canyon is a narrow crack in the Ustyurt plateau up to 80 metres deep. The floor is covered with layered sediments, and the walls reveal fossils of an ancient sea. Even in the hottest summer it stays cool inside — natural shelter from wind and sun.",
+      "source": "kazakhstan.travel"
+    },
+    {
+      "id": "aktau_city",
+      "name": {"ru": "Актау", "en": "Aktau", "kz": "Ақтау"},
+      "coords": {"lat": 43.6500, "lon": 51.1972},
+      "category": "city",
+      "keywords": ["aktau", "city", "capital of mangystau", "caspian", "актау"],
+      "content_ru": "Актау — единственный казахстанский город на Каспийском море и столица Мангистауской области. Город построен в 1963 году вокруг уранового рудника и опреснительной станции. Здесь нет привычных адресов — улицы пронумерованы микрорайонами и зданиями. Закат над Каспием в Актау — один из самых красивых видов в стране.",
+      "content_en": "Aktau is Kazakhstan's only city on the Caspian Sea and the capital of Mangystau region. The city was built in 1963 around a uranium mine and a desalination plant. There are no conventional street addresses — streets are numbered by microdistrict and building. Sunset over the Caspian in Aktau is one of the most beautiful views in the country.",
+      "source": "wikipedia"
+    }
+  ]
+}
