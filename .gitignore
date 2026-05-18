@@ -8,3 +8,10 @@ KnowledgeBase/data/raw/*.jsonl
 *.xcworkspace/xcuserdata/
 DerivedData/
 .build/
+
+# Xcode user-specific
+**/xcuserdata/
+**/*.xcuserstate
+**/UserInterfaceState.xcuserstate
+**/DerivedData/
+*.xcuserdatad
