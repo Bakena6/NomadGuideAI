@@ -1,0 +1,119 @@
+{
+  "schema_version": "1",
+  "region": "mangystau",
+  "sources": "Compiled from Advantour, traveltomangistau.kz, IndyGuide, central-asia.guide, Kolsai Tour, mangystautour999. Routes reflect what local operators actually sell.",
+  "routes": [
+    {
+      "id": "route_classic_5day",
+      "name_ru": "Классический 5-дневный тур (большая петля)",
+      "name_en": "Classic 5-day big loop",
+      "duration_days": 5,
+      "difficulty": "medium",
+      "season": "март-май, сентябрь-октябрь (избегать июль-август из-за жары)",
+      "transport": "4x4",
+      "distance_km": 1244,
+      "landmarks_ids": ["aktau_city", "torysh", "kok_kala", "sherkala", "airakty", "tuzbair", "kogez_yurt_camp", "karaman_ata", "ybykty_canyon", "kyzylkup", "bokty", "boszhira", "senek_sands", "shubat_camel_farm", "karagiye"],
+      "description_ru": "Самый популярный маршрут (Advantour, traveltomangistau, многие операторы). День 1: Актау → Торыш → Кок-Кала → Шеркала → Айракты (палаточный лагерь). День 2: утренний треккинг по Айракты → Тузбаир солончак → этно-юрточный лагерь Когез. День 3: Караман-Ата → каньон Ыбыкты → Кызылкуп (Тирамису, ночёвка). День 4: гора Бокты → Босжыра (три смотровые). День 5: «Клыки Босжыры» → Сенекские пески → верблюжья ферма (шубат) → впадина Карагие → Актау."
+    },
+    {
+      "id": "route_classic_5day_beket",
+      "name_ru": "5-дневный с акцентом на Бекет-Ата",
+      "name_en": "5-day with Beket-Ata pilgrimage focus",
+      "duration_days": 5,
+      "difficulty": "medium",
+      "season": "март-май, сентябрь-октябрь",
+      "transport": "4x4",
+      "landmarks_ids": ["aktau_city", "torysh", "kok_kala", "sherkala", "airakty", "karaman_ata", "ybykty_canyon", "kogez_yurt_camp", "tuzbair", "kyzylkup", "beket_ata", "boszhira", "senek_sands", "karagiye"],
+      "description_ru": "Альтернативный 5-дневный (traveltomangistau Route 1). День 4 целиком посвящён паломничеству к подземной мечети Бекет-Ата (Огланды) перед посещением Босжыры. Подходит для туристов с интересом к сакральной составляющей."
+    },
+    {
+      "id": "route_west_5day",
+      "name_ru": "5-дневный западный (Тупкараган + сакральный)",
+      "name_en": "5-day Western (Tupkaragan + sacred sites)",
+      "duration_days": 5,
+      "difficulty": "medium",
+      "season": "апрель-октябрь",
+      "transport": "4x4",
+      "landmarks_ids": ["aktau_city", "zhygylgan", "kenty_baba", "sultan_epe", "kapamsay", "shakpak_ata", "torysh", "kok_kala", "sherkala", "airakty", "tuzbair", "shopan_ata", "kyzylkup", "bokty", "boszhira", "senek_sands", "karagiye"],
+      "description_ru": "Маршрут traveltomangistau Route 2. День 1 — Тупкараган: Жыгылган, Кенты-Баба, Султан-Эпе, Капамсай. День 2: Шакпак-Ата → Торыш → Кок-Кала → Шеркала → Айракты. День 3: Тузбаир. День 4: Шопан-Ата → Кызылкуп → Бокты. День 5: Босжыра → Сенек → Карагие. Покрывает три подземные мечети (Шакпак, Султан-Эпе, Шопан) и Бекет-Ата опционально."
+    },
+    {
+      "id": "route_classic_3day",
+      "name_ru": "Классический 3-дневный экспресс",
+      "name_en": "Classic 3-day express",
+      "duration_days": 3,
+      "difficulty": "easy",
+      "season": "март-май, сентябрь-октябрь",
+      "transport": "4x4",
+      "landmarks_ids": ["aktau_city", "torysh", "sherkala", "airakty", "tuzbair", "kyzylkup", "bokty", "boszhira", "karagiye"],
+      "description_ru": "Сжатый маршрут (IndyGuide, mangystautour999, central-asia.guide). День 1: Торыш → Шеркала → Айракты (палатки). День 2: Тузбаир → Кызылкуп (Тирамису) → ночёвка. День 3: Бокты → Босжыра (главная смотровая) → Карагие → Актау. Минимум сакрального, максимум визуальных «вау»."
+    },
+    {
+      "id": "route_pilgrimage_3day",
+      "name_ru": "Паломнический 3-дневный — пять святых",
+      "name_en": "3-day pilgrimage of the five saints",
+      "duration_days": 3,
+      "difficulty": "easy",
+      "season": "круглый год (зимой осторожно с дорогами)",
+      "transport": "sedan/4x4",
+      "landmarks_ids": ["aktau_city", "shakpak_ata", "sultan_epe", "shopan_ata", "beket_ata", "karaman_ata", "koshkar_ata"],
+      "description_ru": "Маршрут для верующих и интересующихся суфизмом. День 1: Актау → Шакпак-Ата → Султан-Эпе (Тупкараган). День 2: Шопан-Ата → Бекет-Ата (Огланды, главная святыня, ночёвка в доме паломников). День 3: Караман-Ата → Кошкар-Ата → возвращение. Все пять подземных мечетей — претенденты ЮНЕСКО."
+    },
+    {
+      "id": "route_grand_7day",
+      "name_ru": "Большой 7-дневный (всё включено)",
+      "name_en": "Grand 7-day (all-in)",
+      "duration_days": 7,
+      "difficulty": "medium",
+      "season": "апрель-май, сентябрь-октябрь",
+      "transport": "4x4",
+      "landmarks_ids": ["aktau_city", "zhygylgan", "sultan_epe", "shakpak_ata", "kapamsay", "tamshaly", "torysh", "kok_kala", "sherkala", "airakty", "kyzylkala", "tuzbair", "karaman_ata", "ybykty_canyon", "kyzylkup", "bokty", "shopan_ata", "beket_ata", "boszhira", "senek_sands", "karynzharyk", "karagiye", "fort_shevchenko"],
+      "description_ru": "Полное погружение: западное побережье (Тупкараган + Тамшалы), классическая петля (Шеркала-Айракты-Тузбаир-Кызылкуп-Босжыра), сакральная программа (три подземные мечети), редкая Карынжарык. Заканчивается визитом в Форт-Шевченко (музей Шевченко)."
+    },
+    {
+      "id": "route_ustyurt_8day",
+      "name_ru": "8-дневная экспедиция Устюрт + опция Туркменистан",
+      "name_en": "8-day Ustyurt expedition (Turkmenistan optional)",
+      "duration_days": 8,
+      "difficulty": "hard",
+      "season": "апрель-май, октябрь",
+      "transport": "4x4",
+      "landmarks_ids": ["aktau_city", "karagiye", "boszhira", "karynzharyk", "ustyurt_chink", "ustyurt_reserve", "beket_ata", "senek_sands", "kenderli_bay"],
+      "description_ru": "Маршрут для опытных оверлендеров (Kolsai Tour и др.). Длительный заезд на плато Устюрт, нижние панорамы Босжыры, многодневное движение по чинку, опционально пересечение границы в Туркменистан (Дарваза). Минимум комфорта, максимум удалённости."
+    },
+    {
+      "id": "route_1day_express",
+      "name_ru": "1-дневный экспресс из Актау",
+      "name_en": "1-day express from Aktau",
+      "duration_days": 1,
+      "difficulty": "easy",
+      "season": "круглый год",
+      "transport": "sedan",
+      "distance_km": 300,
+      "landmarks_ids": ["aktau_city", "zhygylgan", "tamshaly", "shakpak_ata", "fort_shevchenko"],
+      "description_ru": "Короткий маршрут для тех, у кого мало времени: западное побережье Тупкараганского полуострова — Жыгылган, Тамшалы (родник-оазис), Шакпак-Ата, заезд в Форт-Шевченко. Около 300 км туда-обратно, без ночёвок."
+    },
+    {
+      "id": "route_2day_weekend",
+      "name_ru": "2-дневный уикенд",
+      "name_en": "2-day weekend",
+      "duration_days": 2,
+      "difficulty": "easy",
+      "season": "март-октябрь",
+      "transport": "4x4",
+      "landmarks_ids": ["aktau_city", "torysh", "sherkala", "airakty", "tuzbair", "karagiye"],
+      "description_ru": "Минимальный маршрут с обязательной ночёвкой в палатке у Айракты или Тузбаира. День 1: Торыш → Шеркала → Айракты (палатки, звёзды). День 2: Тузбаир → Карагие → возвращение. Хороший вариант для жителей Актау на выходные."
+    },
+    {
+      "id": "route_caspian_2day",
+      "name_ru": "Каспийский пляжно-исторический (2 дня)",
+      "name_en": "2-day Caspian beach + history",
+      "duration_days": 2,
+      "difficulty": "easy",
+      "season": "июнь-сентябрь",
+      "transport": "sedan",
+      "landmarks_ids": ["aktau_city", "aktau_seafront", "aktau_museum", "karakol_lake", "fort_shevchenko", "bautino", "kenderli_bay"],
+      "description_ru": "Альтернатива для летнего сезона, когда в пустыне +45°C. День 1: пляжи Актау, набережная, музей, наблюдение фламинго на озере Караколь. День 2: Форт-Шевченко + Баутино либо Кендерли. Подходит семьям с детьми."
+    }
+  ]
+}
